@@ -1,4 +1,4 @@
-# My Visual Lab
+# My Code Sampler
 
 A Vite + React + TypeScript project.
 

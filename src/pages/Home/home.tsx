@@ -5,15 +5,15 @@ const Home = () => {
   return (
     <>
       <section>
-        <h1>VISUAL LAB</h1>
+        <h1>CODE SAMPLER</h1>
 
         <p>
-          Visual Lab is my personal website and learning playground. I use it to
-          experiment with frontend tools, creative coding, and Three.js while
+          Code Sampler is my personal website and learning playground. I use it
+          to experiment with frontend tools, creative coding, and Three.js while
           sharing the process publicly.
         </p>
 
-        <Link to="/projects">Explore the Visual Lab →</Link>
+        <Link to="/projects">Explore the Code Sampler →</Link>
       </section>
 
       <section>
