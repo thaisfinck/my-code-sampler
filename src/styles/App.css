@@ -30,7 +30,7 @@ header {
   align-items: center;
 }
 
-header button {
+header a {
   background: none;
   border: none;
   color: #1a1a1a;
@@ -45,18 +45,19 @@ header button {
   align-items: center;
   gap: 0.5rem;
   flex-direction: column;
+  text-decoration: none;
 }
 
-header button svg {
+header a svg {
   flex-shrink: 0;
 }
 
-header button:hover {
+header a:hover {
   opacity: 0.6;
   color: #ff69b4;
 }
 
-header button::after {
+header a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -68,9 +69,14 @@ header button::after {
   transition: transform 0.2s ease;
 }
 
-header button:hover::after {
+header a:hover::after,
+header a.active::after {
   transform: scaleX(1);
   background-color: #ff69b4;
+}
+
+header a.active {
+  color: #ff69b4;
 }
 
 main {

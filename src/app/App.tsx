@@ -1,26 +1,32 @@
-import { useState } from 'react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import '../styles/App.css';
 import { HomeIcon, ProjectIcon } from '../styles/icons';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const location = useLocation();
+
   return (
     <>
       <header>
-        <button onClick={() => setActiveTab('home')}>
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
           <HomeIcon />
           HOME
-        </button>
-        <button onClick={() => setActiveTab('projects')}>
+        </Link>
+        <Link
+          to="/projects"
+          className={location.pathname === '/projects' ? 'active' : ''}
+        >
           <ProjectIcon />
           PROJECTS
-        </button>
+        </Link>
       </header>
       <main>
-        {activeTab === 'home' && <Home />}
-        {activeTab === 'projects' && <Projects />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </main>
     </>
   );
