@@ -1,0 +1,81 @@
+/* Home Page Styles */
+main section {
+  margin-bottom: 2rem;
+  max-width: 65ch;
+}
+
+main section:last-child {
+  margin-bottom: 0;
+}
+
+main h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+main p:last-child {
+  margin-bottom: 0;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+}
+
+main li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+main li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(26, 26, 26, 0.4);
+}
+
+main li:last-child {
+  margin-bottom: 0;
+}
+
+main a {
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+main a:hover {
+  color: #ff69b4;
+  border-bottom-color: #ff69b4;
+}
+
+main i {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  font-style: italic;
+}

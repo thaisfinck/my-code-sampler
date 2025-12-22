@@ -1,6 +1,6 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from '../pages/Home';
-import Projects from '../pages/Projects';
+import Home from '../pages/Home/home';
+import Projects from '../pages/Projects/projects';
 import '../styles/App.css';
 import { HomeIcon, ProjectIcon } from '../styles/icons';
 
