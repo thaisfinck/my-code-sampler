@@ -26,11 +26,30 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background-color: #faf9f6;
   display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav {
+  display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-header a {
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+header nav a {
   background: none;
   border: none;
   color: #1a1a1a;
@@ -48,16 +67,16 @@ header a {
   text-decoration: none;
 }
 
-header a svg {
+header nav a svg {
   flex-shrink: 0;
 }
 
-header a:hover {
+header nav a:hover {
   opacity: 0.6;
   color: #ff69b4;
 }
 
-header a::after {
+header nav a::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -69,13 +88,13 @@ header a::after {
   transition: transform 0.2s ease;
 }
 
-header a:hover::after,
-header a.active::after {
+header nav a:hover::after,
+header nav a.active::after {
   transform: scaleX(1);
   background-color: #ff69b4;
 }
 
-header a.active {
+header nav a.active {
   color: #ff69b4;
 }
 

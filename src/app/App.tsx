@@ -3,6 +3,7 @@ import Home from '../pages/Home/home';
 import Projects from '../pages/Projects/projects';
 import '../styles/App.css';
 import { HomeIcon, ProjectIcon } from '../styles/icons';
+import logo from '../assets/logo.png';
 
 function App() {
   const location = useLocation();
@@ -10,17 +11,22 @@ function App() {
   return (
     <>
       <header>
-        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-          <HomeIcon />
-          HOME
+        <Link to="/" className="logo-link">
+          <img src={logo} alt="Visual Lab" className="logo" />
         </Link>
-        <Link
-          to="/projects"
-          className={location.pathname === '/projects' ? 'active' : ''}
-        >
-          <ProjectIcon />
-          PROJECTS
-        </Link>
+        <nav>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+            <HomeIcon />
+            HOME
+          </Link>
+          <Link
+            to="/projects"
+            className={location.pathname === '/projects' ? 'active' : ''}
+          >
+            <ProjectIcon />
+            PROJECTS
+          </Link>
+        </nav>
       </header>
       <main>
         <Routes>
