@@ -1,0 +1,61 @@
+.project-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  i {
+    font-size: 1rem;
+    color: dimgray;
+  }
+}
+
+.corners {
+  position: relative;
+  padding: 1rem;
+
+  .corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: #ff69b4;
+    border-style: solid;
+  }
+}
+
+/* top-left */
+.corners .corner-tl {
+  top: 0;
+  left: 0;
+  border-width: 3px 0 0 3px;
+}
+
+/* top-right */
+.corners .corner-tr {
+  top: 0;
+  right: 0;
+  border-width: 3px 3px 0 0;
+}
+
+/* bottom-left */
+.corners .corner-bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 3px 3px;
+}
+
+/* bottom-right */
+.corners .corner-br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 3px 3px 0;
+}
