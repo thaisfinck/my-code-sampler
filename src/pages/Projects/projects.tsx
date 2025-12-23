@@ -1,4 +1,5 @@
 import ProjectCard from './projectCard';
+import InteractiveParticleBackground from './InteractiveParticleBackground/interactiveParticleBackground';
 import './projects.css';
 
 const Projects = () => {
@@ -6,13 +7,9 @@ const Projects = () => {
     <section>
       <h1>PROJECTS</h1>
       <ProjectCard
-        title="Mocked Title 1"
-        description="Mocked description"
-        project={<div>Exemple of project</div>}
-      />
-      <ProjectCard
-        title="Mocked Title 2"
-        project={<div>Another exemple of a project</div>}
+        title="Interactive Particle Background"
+        description="A small experiment using Canvas 2D and Zustand to render an interactive particle field."
+        project={<InteractiveParticleBackground />}
       />
     </section>
   );
