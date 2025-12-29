@@ -7,8 +7,8 @@ import {
   type ChangeEvent,
   type MouseEvent,
 } from 'react';
-import { useParticleStore } from '../../../app/particleStore';
-import './interactiveParticleBackground.css';
+import { useParticleStore } from '../stores/particleStore';
+import '../styles/interactiveParticleBackground.css';
 
 type Particle = {
   x: number;
@@ -36,7 +36,7 @@ const createParticles = (
   return particles;
 };
 
-const InteractiveParticleBackground = () => {
+const Repulsion = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -232,4 +232,4 @@ const InteractiveParticleBackground = () => {
   );
 };
 
-export default InteractiveParticleBackground;
+export default Repulsion;

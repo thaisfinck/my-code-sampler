@@ -6,8 +6,8 @@ import {
   useState,
   type MouseEvent,
 } from 'react';
-import './interactiveParticleBackground.css';
-import { useEmitterStore } from '../../../app/emitterStore';
+import '../styles/interactiveParticleBackground.css';
+import { useEmitterStore } from '../stores/emitterStore';
 
 type Particle = {
   x: number;
