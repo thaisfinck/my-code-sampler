@@ -5,6 +5,7 @@ import {
   useRef,
   useState,
   type MouseEvent,
+  type TouchEvent,
 } from 'react';
 import '../styles/interactiveParticleBackground.css';
 import { useEmitterStore } from '../stores/emitterStore';
@@ -44,14 +45,28 @@ const Emitter = () => {
     setCanvasSize({ width: rect.width, height: rect.height });
   }, []);
 
-  const handleMouseMove = useCallback(
-    (event: MouseEvent<HTMLCanvasElement>) => {
+  const handlePointerMove = useCallback(
+    (event: MouseEvent<HTMLCanvasElement> | TouchEvent<HTMLCanvasElement>) => {
       setEnabled(true);
-      const rect = event.currentTarget.getBoundingClientRect();
-      const mouseX = event.clientX - rect.left;
-      const mouseY = event.clientY - rect.top;
 
-      // Add new particles at the mouse position
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const rect = canvas.getBoundingClientRect();
+      let mouseX: number, mouseY: number;
+
+      if ('touches' in event) {
+        // Handle touch events
+        const touch = event.touches[0];
+        mouseX = touch.clientX - rect.left;
+        mouseY = touch.clientY - rect.top;
+      } else {
+        // Handle mouse events
+        mouseX = event.clientX - rect.left;
+        mouseY = event.clientY - rect.top;
+      }
+
+      // Add new particles at the pointer position
       for (let i = 0; i < 5; i++) {
         particlesRef.current.push({
           x: mouseX,
@@ -124,7 +139,8 @@ const Emitter = () => {
         width={canvasSize.width}
         height={canvasSize.height}
         className="interactive-particle-canvas"
-        onMouseMove={handleMouseMove}
+        onMouseMove={handlePointerMove}
+        onTouchMove={handlePointerMove}
       />
     </div>
   );
