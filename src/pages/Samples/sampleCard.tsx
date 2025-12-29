@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import './projects.css';
+import './samples.css';
 
-const ProjectCard = ({
+const SampleCard = ({
   title,
   description,
   project,
@@ -25,4 +25,4 @@ const ProjectCard = ({
   );
 };
 
-export default ProjectCard;
+export default SampleCard;

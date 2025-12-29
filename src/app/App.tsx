@@ -1,6 +1,5 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from '../pages/Home/home';
-import Projects from '../pages/Projects/projects';
+import { Home, Samples } from '../pages';
 import '../styles/App.css';
 import { HomeIcon, ProjectIcon } from '../styles/icons';
 import logo from '../assets/logo.png';
@@ -31,7 +30,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects" element={<Samples />} />
         </Routes>
       </main>
     </>
