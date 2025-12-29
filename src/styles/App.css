@@ -100,7 +100,7 @@ header nav a.active {
 
 main {
   flex: 1;
-  padding: 3rem;
+  padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
   width: 100%;

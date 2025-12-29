@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <section>
-        <h1>CODE SAMPLER</h1>
+        <h1>Code Sampler</h1>
 
         <p>
           Code Sampler is my personal website and learning playground. I use it

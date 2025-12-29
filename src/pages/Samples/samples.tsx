@@ -5,7 +5,7 @@ import './samples.css';
 const Samples = () => {
   return (
     <section>
-      <h1>PROJECTS</h1>
+      <h1>Samples</h1>
       <SampleCard
         title="Interactive Particle Background - Repulsion"
         description="A small experiment using Canvas 2D and Zustand to render an interactive particle field."
