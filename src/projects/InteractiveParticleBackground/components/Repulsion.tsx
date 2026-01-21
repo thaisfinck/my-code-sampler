@@ -8,7 +8,6 @@ import {
   type MouseEvent,
 } from 'react';
 import { useParticleStore } from '../stores/particleStore';
-import '../styles/interactiveParticleBackground.css';
 
 type Particle = {
   x: number;
@@ -95,19 +94,13 @@ const Repulsion = () => {
     setMousePos(null);
   }, []);
 
-  const handleToggleEnabled = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setEnabled(event.target.checked);
-    },
-    [setEnabled]
-  );
+  const handleToggleEnabled = useCallback(() => {
+    setEnabled(!enabled);
+  }, [enabled, setEnabled]);
 
-  const handleToggleInteraction = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setInteractionEnabled(event.target.checked);
-    },
-    [setInteractionEnabled]
-  );
+  const handleToggleInteraction = useCallback(() => {
+    setInteractionEnabled(!interactionEnabled);
+  }, [interactionEnabled, setInteractionEnabled]);
 
   const handleParticleCountChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -188,43 +181,66 @@ const Repulsion = () => {
   }, [enabled, mousePos]);
 
   return (
-    <div className="interactive-particle-wrapper">
-      <div className="control-panel">
-        <label>
-          <input
-            className="toggle-checkbox"
-            type="checkbox"
-            checked={enabled}
-            onChange={handleToggleEnabled}
-          />
-          Enabled
-        </label>
-        <label>
-          <input
-            className="toggle-checkbox"
-            type="checkbox"
-            checked={interactionEnabled}
-            onChange={handleToggleInteraction}
-          />
-          Interaction
-        </label>
-        <label className="particle-intensity-control">
-          <span>Intensity</span>
-          <input
-            type="range"
-            min={20}
-            max={400}
-            value={particleCount}
-            onChange={handleParticleCountChange}
-          />
-          <span className="particle-intensity-value">{particleCount}</span>
-        </label>
+    <div className="project-wrapper">
+      <div className="project-controls">
+        <div className="project-control-row">
+          <span className="project-label">View</span>
+          <div className="project-toggle-wrapper">
+            <button
+              type="button"
+              className={`project-toggle-btn ${enabled ? 'active' : ''}`}
+              onClick={handleToggleEnabled}
+            >
+              Enabled
+            </button>
+            <button
+              type="button"
+              className={`project-toggle-btn ${!enabled ? 'active' : ''}`}
+              onClick={handleToggleEnabled}
+            >
+              Disabled
+            </button>
+          </div>
+        </div>
+        <div className="project-control-row">
+          <span className="project-label">Interaction</span>
+          <div className="project-toggle-wrapper">
+            <button
+              type="button"
+              className={`project-toggle-btn ${interactionEnabled ? 'active' : ''}`}
+              onClick={handleToggleInteraction}
+            >
+              On
+            </button>
+            <button
+              type="button"
+              className={`project-toggle-btn ${!interactionEnabled ? 'active' : ''}`}
+              onClick={handleToggleInteraction}
+            >
+              Off
+            </button>
+          </div>
+        </div>
+        <div className="project-control-row">
+          <span className="project-label">Particle Count</span>
+          <div className="project-range">
+            <input
+              type="range"
+              min={20}
+              max={400}
+              value={particleCount}
+              onChange={handleParticleCountChange}
+            />
+
+            <span className="range-values">{particleCount}</span>
+          </div>
+        </div>
       </div>
       <canvas
         ref={canvasRef}
         width={canvasSize.width}
         height={canvasSize.height}
-        className="canvas"
+        className="project-canvas"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       />

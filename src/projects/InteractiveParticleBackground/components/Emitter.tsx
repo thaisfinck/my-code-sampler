@@ -7,7 +7,6 @@ import {
   type MouseEvent,
   type TouchEvent,
 } from 'react';
-import '../styles/interactiveParticleBackground.css';
 import { useEmitterStore } from '../stores/emitterStore';
 
 type Particle = {
@@ -133,12 +132,12 @@ const Emitter = () => {
   }, [enabled]);
 
   return (
-    <div className="interactive-particle-wrapper">
+    <div className="project-wrapper">
       <canvas
         ref={canvasRef}
         width={canvasSize.width}
         height={canvasSize.height}
-        className="canvas"
+        className="project-canvas"
         onMouseMove={handlePointerMove}
         onTouchMove={handlePointerMove}
       />
