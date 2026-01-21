@@ -115,7 +115,7 @@ const Emitter = () => {
 
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = '#fff';
+          ctx.fillStyle = '#000';
           ctx.fill();
         });
       }
@@ -138,7 +138,7 @@ const Emitter = () => {
         ref={canvasRef}
         width={canvasSize.width}
         height={canvasSize.height}
-        className="interactive-particle-canvas"
+        className="canvas"
         onMouseMove={handlePointerMove}
         onTouchMove={handlePointerMove}
       />
