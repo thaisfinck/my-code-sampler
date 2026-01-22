@@ -157,3 +157,47 @@
   font-variant-numeric: tabular-nums;
   color: #6b7280;
 }
+
+.project-buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-checkbox-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: #374151;
+}
+
+.project-checkbox-button.active {
+  background: #111827;
+  color: white;
+}
+
+.project-checkbox-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+}
+
+.project-button {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.2rem 0.8rem;
+  background: white;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: #374151;
+}
+
+.project-button:hover {
+  background: #f3f4f6;
+}
