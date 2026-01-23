@@ -271,29 +271,6 @@ const DataViz = () => {
         </div>
 
         <div className="project-control-row">
-          <span className="project-label">Value range</span>
-          <div className="project-range">
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={minValue}
-              onChange={handleMinChange}
-            />
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={maxValue}
-              onChange={handleMaxChange}
-            />
-            <span className="project-range-values">
-              {Math.round(minValue)} – {Math.round(maxValue)}
-            </span>
-          </div>
-        </div>
-
-        <div className="project-control-row">
           <span className="project-label">Categories</span>
           <div className="project-buttons-wrapper">
             {(['A', 'B', 'C'] as Category[]).map((cat) => (
@@ -319,21 +296,45 @@ const DataViz = () => {
         </div>
 
         <div className="project-control-row">
-          <span className="project-label">Density grid</span>
+          <span className="project-label">Value range</span>
           <div className="project-range">
             <input
               type="range"
-              min={8}
-              max={50}
-              value={density.cellSizePx}
-              onChange={handleDensityCellSizeChange}
+              min={0}
+              max={100}
+              value={minValue}
+              onChange={handleMinChange}
+            />
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={maxValue}
+              onChange={handleMaxChange}
             />
             <span className="project-range-values">
-              cell ~{density.cellSizePx.toFixed(0)}px
+              {Math.round(minValue)} – {Math.round(maxValue)}
             </span>
           </div>
         </div>
 
+        {viewMode === 'density' && (
+          <div className="project-control-row">
+            <span className="project-label">Density grid</span>
+            <div className="project-range">
+              <input
+                type="range"
+                min={8}
+                max={50}
+                value={density.cellSizePx}
+                onChange={handleDensityCellSizeChange}
+              />
+              <span className="project-range-values">
+                cell ~{density.cellSizePx.toFixed(0)}px
+              </span>
+            </div>
+          </div>
+        )}
         <div className="project-control-row">
           <button
             type="button"
