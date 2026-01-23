@@ -1,5 +1,5 @@
 import SampleCard from './sampleCard';
-import { Repulsion, Emitter } from '../../projects';
+import { Repulsion, Emitter, DataViz, StitchesViz } from '../../projects';
 import './samples.css';
 
 const Samples = () => {
@@ -17,6 +17,17 @@ const Samples = () => {
         description="This is also an experiment that uses Canvas 2D and Zustand.
         Particles are emitted from the mouse pointer position."
         project={<Emitter />}
+      />
+
+      <SampleCard
+        title="State-Driven Stitches Visualization"
+        description="A state-first canvas visualization where the number of stitches and the type of stitches are driven by the state. Inspired by classic embroidery patterns."
+        project={<StitchesViz />}
+      />
+      <SampleCard
+        title="State-Driven Data Visualization System"
+        description="Another state-first canvas visualization where filters, view mode and density settings drive two rendering pipelines: scatter and density."
+        project={<DataViz />}
       />
     </section>
   );
