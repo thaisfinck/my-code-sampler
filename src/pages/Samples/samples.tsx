@@ -1,5 +1,11 @@
 import SampleCard from './sampleCard';
-import { Repulsion, Emitter, DataViz, StitchesViz } from '../../projects';
+import {
+  Repulsion,
+  Emitter,
+  DataViz,
+  StitchesViz,
+  TableDataViz,
+} from '../../projects';
 import './samples.css';
 
 const Samples = () => {
@@ -28,6 +34,12 @@ const Samples = () => {
         title="State-Driven Data Visualization System"
         description="Another state-first canvas visualization where filters, view mode and density settings drive two rendering pipelines: scatter and density."
         project={<DataViz />}
+      />
+
+      <SampleCard
+        title="State-Driven Table Data Visualization"
+        description="A state-first table visualization where filters, view mode and density settings drive the table rendering."
+        project={<TableDataViz />}
       />
     </section>
   );
