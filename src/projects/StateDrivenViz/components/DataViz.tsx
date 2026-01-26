@@ -8,12 +8,7 @@ import {
 } from 'react';
 import { useStateDrivenVizStore } from '../stores/dataVizStore';
 import type { Category, DataPoint } from '../types/dataVizTypes';
-
-const CATEGORY_COLORS: Record<Category, string> = {
-  A: '#823460',
-  B: '#c61c73',
-  C: '#f184bc',
-};
+import { DEFAULT_COLORS } from '../styles/defaultColors';
 
 const PADDING = 26;
 
@@ -182,7 +177,7 @@ const DataViz = () => {
     if (viewMode === 'scatter') {
       filteredData.forEach((p) => {
         ctx.beginPath();
-        ctx.fillStyle = CATEGORY_COLORS[p.category];
+        ctx.fillStyle = DEFAULT_COLORS[p.category];
         ctx.globalAlpha = 0.9;
         ctx.arc(
           projectX(p.x),
@@ -282,12 +277,12 @@ const DataViz = () => {
                     ? 'project-checkbox-button active'
                     : 'project-checkbox-button'
                 }
-                style={{ borderColor: CATEGORY_COLORS[cat] }}
+                style={{ borderColor: DEFAULT_COLORS[cat] }}
                 onClick={() => handleCategoryToggle(cat)}
               >
                 <span
                   className="project-checkbox-dot"
-                  style={{ backgroundColor: CATEGORY_COLORS[cat] }}
+                  style={{ backgroundColor: DEFAULT_COLORS[cat] }}
                 />
                 {cat}
               </button>
