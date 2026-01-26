@@ -1,11 +1,12 @@
 import { useEffect, useRef, type ChangeEvent } from 'react';
 import { useStitchesVizStore } from '../stores/stitchesVizStore';
 import type { Stitches } from '../types/stitchesVizTypes';
+import { DEFAULT_COLORS } from '../styles/defaultColors';
 
 const STITCH_COLORS: Record<Stitches, string> = {
-  Cross: '#823460',
-  Back: '#c61c73',
-  French: '#f184bc',
+  Cross: DEFAULT_COLORS.A,
+  Back: DEFAULT_COLORS.B,
+  French: DEFAULT_COLORS.C,
 };
 
 const StitchesViz = () => {
