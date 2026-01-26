@@ -2,6 +2,10 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.6rem;
+  }
 }
 
 .tdv-table th,
@@ -78,7 +82,6 @@
 .edit-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   background-color: #e9d2de;
   border: 1px solid #666;
   padding: 0.5rem;

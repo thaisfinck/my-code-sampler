@@ -272,7 +272,7 @@ const TableInner = () => {
         </div>
         {selectedRow && (
           <div className="edit-row">
-            <span className="project-label">Edit selected:</span>
+            <span className="project-label">Edit row:</span>
             <div className="tdv-edit-panel">
               <div>
                 <div className="buttons-wrapper">
@@ -293,7 +293,7 @@ const TableInner = () => {
                     disabled={updateMutation.isPending || !editingValue}
                     className="project-checkbox-button"
                   >
-                    {updateMutation.isPending ? 'Updating...' : 'Update Value'}
+                    {updateMutation.isPending ? 'Updating...' : 'Update'}
                   </button>
                 </div>
                 <div className="buttons-wrapper">
