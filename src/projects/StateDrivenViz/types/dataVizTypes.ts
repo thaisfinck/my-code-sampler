@@ -9,6 +9,11 @@ export type DataPoint = {
   category: Category;
 };
 
+export type DatasetParams = {
+  count?: number;
+  seed?: number;
+};
+
 export type ViewMode = 'scatter' | 'density';
 
 export type Filters = {
